@@ -1,0 +1,40 @@
+body{
+    background: url('../images/cafe.jpg') no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Special Elite', cursive;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 10% 8% 72% 90%;
+    margin: 0;
+    height: 100%;
+    grid-template-areas: "header header header header"
+    ". nav nav nav"
+    "content content content content"
+    "footer footer footer footer"
+    ;
+}
+html{
+    height: 100%;
+}
+
+header{
+    font-size: 200%;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#content{
+    text-align: center;
+}
+
+#content > h1{
+    font-size: 400%;
+}
+
+#about{
+    font-size: 200%;
+}
