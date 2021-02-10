@@ -1,25 +1,32 @@
 import displayAbout from './initial-page'
-
+import displayMenu from './menu';
+import displayContactUs from './contact';
 const structure = function () {
-    const about = byId("about");
-    const menu = byId("menu");
-    const contactUs = byId("contactUs");
-    about.addEventListener('click', displayAbout());
-    menu.addEventListener('click', displayMenu());
-    contactUs.addEventListener('click', displayContactUs());
-    function _byId(id) {
-        return document.getElementById(id);
+    function mainDisplay() {
+        const h1 = document.querySelector('h1');
+        let navBar = document.createElement('nav');
+        navBar.appendChild(tabCreator('About'));
+        navBar.appendChild(tabCreator('Menu'));
+        navBar.appendChild(tabCreator('Contact Us'));
+        navBar.id = "tabs";
+        h1.insertAdjacentElement('afterend', navBar);
     }
-}
-function mainDisplay() {
-    const h1 = document.querySelector('h1');
-    let navBar = document.createElement('nav');
-    navBar.appendChild(tabCreator('About'));
-    navBar.appendChild(tabCreator('Menu'));
-    navBar.appendChild(tabCreator('Contact Us'));
-    navBar.id = "tabs";
-    h1.insertAdjacentElement('afterend', navBar);
-}
+    function addTabListeners() {
+        const _about = _byId("about");
+        const _menu = _byId("menu");
+        const _contactUs = _byId("contactUs");
+        _about.addEventListener('click', displayAbout());
+        _menu.addEventListener('click', displayMenu());
+        _contactUs.addEventListener('click', displayContactUs());
+        function _byId(id) {
+            return document.getElementById(id);
+        }
+    }
+    return { addTabListeners, mainDisplay };
+}();
+
+
+
 function tabCreator(text) {
     let button = document.createElement('button');
     if (text === "Menu")
@@ -31,5 +38,5 @@ function tabCreator(text) {
     button.textContent = text;
     return button;
 }
-mainDisplay();
-displayAbout(); 
+structure.mainDisplay();
+structure.addTabListeners(); 
