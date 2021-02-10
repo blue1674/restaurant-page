@@ -11,9 +11,9 @@ body{
     grid-template-rows: 15% 8% 70% 7%; 
     margin: 0;
     height: 100%;
-    grid-template-areas: "title",
-    "tabs",
-    "content",
+    grid-template-areas: "title"
+    "tabs"
+    "content"
     "footer";
     
 }
@@ -23,12 +23,47 @@ html{
 
 #title{
     grid-area: title;
+    font-size: 300%;
+    text-align: center;
 }
 #tabs{
     grid-area: tabs;
+    display: grid;
+    grid-template-columns: 70% repeat(3, 10%);
+    grid-template-rows: 100%;
+    grid-template-areas: ". menu about contactUs";
+   
+    font-size: 150%;
 }
+#tabs > button{
+    all: unset;
+    background-color: rgba(165, 42, 42, 0.575);
+    border: 3px solid rgb(255, 0, 0);
+    text-align: center;
+}
+#tabs > button:hover{
+    transform: scale(1.01);
+    filter: brightness(80%);
+}
+#tabs > button:nth-child(1){
+    grid-area: menu;
+}
+#tabs > button:nth-child(2){
+    grid-area: about;
+}
+#tabs > button:nth-child(3){
+    grid-area: contactUs;
+    margin-right: 2%;
+
+}
+
 #content{
+    background-color: rgba(165, 42, 42, 0.26);
+    margin: 5% 30% 0% 30%;
+    padding-top: 2%;
     grid-area: content;
+    text-align: center;
+    font-size: 180%;
 }
 #footer{
     grid-area: footer;
