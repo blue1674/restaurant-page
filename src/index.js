@@ -5,6 +5,7 @@ function mainDisplay(){
     navBar.appendChild(tabCreator('Menu')); 
     navBar.appendChild(tabCreator('About'));
     navBar.appendChild(tabCreator('Contact Us'));
+    navBar.id = "tabs"; 
     h1.insertAdjacentElement('afterend', navBar); 
 }
 function tabCreator(text){
