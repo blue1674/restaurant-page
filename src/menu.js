@@ -1,6 +1,7 @@
 
 function displayMenu() {
     let content = document.getElementById('content');
+    content.innerHTML = ""; 
     content.style.display = 'grid';
     content.style.gridTemplateColumns = '70% 30%';
     content.style.gridTemplateRows = 'repeat(10, 1fr)';
