@@ -38,7 +38,7 @@ html{
 #tabs > button{
     all: unset;
     background-color: rgba(165, 42, 42, 0.575);
-    border: 3px solid rgb(255, 0, 0);
+    border: 1px solid rgba(255, 0, 0, 0.486);
     text-align: center;
 }
 #tabs > button:hover{
