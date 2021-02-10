@@ -69,3 +69,31 @@ html{
     grid-area: footer;
 }
 
+#contacts{
+    display: grid;
+    grid-template-rows: 10% 20% 20% 10% 40%;
+    grid-template-areas: "."
+    "contacts"
+     "email"
+     "phone"
+     ".";
+    height: 100%;
+}
+
+#contacts > div:nth-child(1){
+    grid-area: contacts;
+}
+
+#contacts > div:nth-child(2){
+    grid-area: email;
+}
+
+#contacts > div:nth-child(3){
+    grid-area: phone;
+}
+
+#menu{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    height: 100%;
+}

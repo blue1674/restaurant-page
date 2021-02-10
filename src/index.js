@@ -23,24 +23,25 @@ let structure = (function () {
         navBar.appendChild(_tabCreator('Contact Us'));
         navBar.id = "tabs";
         h1.insertAdjacentElement('afterend', navBar);
-        
+        function addTabListeners() {
+            let _about = _byId("about");
+            let _menu = _byId("menu");
+            let _contactUs = _byId("contactUs");
+            _about.addEventListener('click', displayAbout);
+            _menu.addEventListener('click', displayMenu);
+            _contactUs.addEventListener('click', displayContactUs);
+    
+            function _byId(id) {
+                return document.getElementById(id);
+            }
+        }
+        addTabListeners();
         displayAbout(); 
     }
 
-    function addTabListeners() {
-        let _about = _byId("about");
-        let _menu = _byId("menu");
-        let _contactUs = _byId("contactUs");
-        _about.addEventListener('click', displayAbout);
-        _menu.addEventListener('click', displayMenu);
-        _contactUs.addEventListener('click', displayContactUs);
-
-        function _byId(id) {
-            return document.getElementById(id);
-        }
-    }
-    return { addTabListeners, mainDisplay };
+    
+    return { mainDisplay };
 })();
 
 structure.mainDisplay();
-structure.addTabListeners(); 
+
